@@ -2,7 +2,7 @@
 
 A kachery feed is a collection of append-only logs called subfeeds, and is writeable by one and only one kachery node. Unlike kachery files, which are referred to by [content URIs](./content-uris.md), and are guaranteed never to change, subfeeds are meant to grow over time, and therefore cannot be referenced by their content. Instead they are referenced by a feed URI of the form:
 
-```
+```bash
 feed://d83129c270a87995917e26eb3cea504d2431681fe66cc3bfd02083ef7bfaecdb/primes
 ```
 
@@ -93,9 +93,9 @@ node which owns the feed also keeps the private key, and signs each message whic
 is officially added to the feed.
 
 Feeds are also distinct from kachery files in that a feed has a specific
-owner node. Files are content-addressable, and thus there is no hierarchy by
-which one node's copy would be preferred over another node's--it doesn't matter
-who contributed the file originally, only what the file contains. For feeds,
+owner node. Files with the same fingerprint should be the same, so there is no hierarchy that
+prefers node's copy over another node's: it doesn't matter
+who contributed the file originally, only what it contains. For feeds,
 the node that owns the feed is the authoritative source of its contents, and the only entity that is allowed to append new messages.
 
 Finally, because the messages added to an append-only log within a feed have an inherent ordering (and
