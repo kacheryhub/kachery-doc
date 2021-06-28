@@ -4,16 +4,15 @@
 
 To learn more, select one of the following topics:
 
+* [Overview of the kachery network](./doc/network.md)
 * [Content-addressable storage and content URIs](./doc/content-uris.md)
-* [Kachery feeds](./doc/feeds.md)
+* Kachery [files](./doc/content-uris.md), [feeds](./doc/feeds.md), and [tasks](./doc/tasks.md)
 * [Getting started: hosting a kachery node](./doc/kacheryhub-markdown/hostKacheryNode.md)
 * [Sharing data between nodes](./doc/sharing-data.md)
-* [Overview of the kachery network](./doc/network.md)
 * [Local node storage](./doc/local-node-storage.md)
-* [Software components](./doc/software-components.md)
+* [Kachery software components](./doc/software-components.md)
 * [About kachery channels](./doc/channel.md)
 * [Kachery security model](./doc/security.md)
-* [Hosting a task backend](./doc/tasks.md)
 * [Web apps powered by kachery](./doc/web-apps.md)
 
 <!-- Kachery network -->

@@ -1,10 +1,10 @@
 # How to host a kachery node
 
 Most of the action in the kachery network involves communication between
-[nodes](./node.md). These are the network peers that exchange information
+[nodes](https://github.com/kacheryhub/kachery-doc/blob/main/doc/node.md). These are the network peers that exchange information
 and maintain offline storage in the content-addressable database; nodes
-may also optionally be the owners of [feeds](./feeds.md) or provide
-[task execution resources](tasks.md).
+may also optionally be the owners of [feeds](https://github.com/kacheryhub/kachery-doc/blob/main/doc/feeds.md) or provide
+[task execution resources](https://github.com/kacheryhub/kachery-doc/blob/main/doc/tasks.md).
 
 A kachery node can be hosted on anything from a modest user machine
 (such as a laptop) to a large shared lab resource with abundant

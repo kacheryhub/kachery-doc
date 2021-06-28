@@ -5,7 +5,7 @@
 The kachery network is organized into nodes and channels, and each node may belong to one or more channels configured with particular roles.
 
 * A **[node](./node.md)** is usually a running instance of the [kachery daemon](https://github.com/kacheryhub/kachery-daemon) software: think of it as a computer
-whose user would like to send or receive files. But a web app or other cloud-deployed entity can also serve as a kachery node. Each node has a unique node ID (the public part of a public/private key pair), an owner ID, and a channel membership configuration. Communication and data transfer on the network takes
+whose user would like to send or receive files. A web app or other cloud-deployed entity can also serve as a kachery node. Each node has a unique node ID (the public part of a public/private key pair), an owner ID, and a channel membership configuration. Communication and data transfer on the network takes
 place between nodes via channels.
 
 * A **[channel](./channel.md)** defines a community of nodes that exchange files: the channel has

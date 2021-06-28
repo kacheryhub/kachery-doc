@@ -1,0 +1,26 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    // The "bash -ic" is needed here so that our ~/.bashrc gets sourced. See: https://github.com/microsoft/vscode/issues/29412
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "check-md-links",
+            "type": "shell",
+            "command": "bash -ic .vscode/tasks/check-md-links.sh",
+            "presentation": {
+                "clear": true
+            },
+            "detail": "Check markdown links"
+        },
+        {
+            "label": "sync-with-kacheryhub",
+            "type": "shell",
+            "command": "bash -ic .vscode/tasks/sync-with-kacheryhub.sh",
+            "presentation": {
+                "clear": true
+            },
+            "detail": "Sync with kacheryhub"
+        }
+    ]
+}

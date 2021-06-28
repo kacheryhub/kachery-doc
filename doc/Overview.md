@@ -52,7 +52,7 @@ or node aliases) and are not shared between nodes.
 
 If you want to send and receive files, you (or your administrator, for shared setups)
 will need to install and run kachery-daemon on the machine that you intend to be the
-host of the node. See [full setup instructions for a kachery node](./doc/kacheryhub-markdown/hostKacheryNode.md).
+host of the node. See [full setup instructions for a kachery node](./kacheryhub-markdown/hostKacheryNode.md).
 You will also need to use kacheryhub to connect your new node to the channel you'd
 like to use to share data.
 
