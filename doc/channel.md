@@ -4,7 +4,7 @@ Within the kachery network, a *channel* is both a community of
 nodes which may share information and communicate indirectly with
 each other (subject to their granted [permissions](./security.md#Permissions)),
 and the infrastructure through which that information sharing and communication
-occurs. The kachery network is designed as a *mediated peer-to-peer* information
+occurs. The [kachery network](./network.md) is designed as a *mediated peer-to-peer* information
 transfer network: nodes are all potential peers which can both contribute and
 receive information, but they communicate with each other indirectly, using the
 resources provided by the channel.

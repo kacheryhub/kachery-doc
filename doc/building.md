@@ -1,5 +1,7 @@
 # Building an Application That Uses kachery
 
+**This file is a stub.**
+
 ## Requirements
 
 TODO What does an app using kachery need to provide to satisfy the interface?
