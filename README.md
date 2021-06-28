@@ -6,7 +6,7 @@ To learn more, select one of the following topics:
 
 * [Content-addressable storage and content URIs](./doc/content-uris.md)
 * [Kachery feeds](./doc/feeds.md)
-* [Getting started: hosting a kachery node](./doc/node-howto.md)
+* [Getting started: hosting a kachery node](./doc/kacheryhub-markdown/hostKacheryNode.md)
 * [Sharing data between nodes](./doc/sharing-data.md)
 * [Overview of the kachery network](./doc/network.md)
 * [Local node storage](./doc/local-node-storage.md)

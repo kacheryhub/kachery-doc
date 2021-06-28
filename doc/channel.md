@@ -45,7 +45,6 @@ Channels, along with their membership and permissions, are managed via the
 [kacheryhub](https://www.kacheryhub.org/home) website. You can
 [read more about kacheryhub here](./hub.md).
 
-## Managing a Channel
+## Creating and managing a channel
 
-For the most up-to-date instructions on creating and managing a channel, see the
-[instructions on kacheryhub](https://www.kacheryhub.org/home).
+[How to create a kachery channel](./kacheryhub-markdown/createKacheryChannel.md)
