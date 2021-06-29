@@ -35,7 +35,7 @@ nodes communicate with each other for two reasons: they can
 either request information from, or offer to provide information to,
 other peers on the kachery network. The Ably pub-sub service acts
 as the broker that receives and dispatches messages. Every kachery channel
-(every community of nodes) is provided with six pub-sub channels (that is, six
+(every community of nodes) is provided with six pub-sub bands (that is, six
 communication bands). These correspond to channels where nodes can request
 or provide the three types of kachery data. Nodes with "request" permissions
 are able to publish on a *request* channel and subscribe to responses on the

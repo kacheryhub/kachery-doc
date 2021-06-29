@@ -43,22 +43,3 @@ are stored in a distributed fashion among the users of the network. The document
 [discusses the kachery storage model in detail](./storage.md).
 
 Additionally, kachery supports permissions that [restrict access to data and compute resources](./security.md).
-
-Finally, nodes may also store local data called *mutables* in a local filesystem database.
-These are intended to be short-term volatile stores of convenience data (such as channel
-or node aliases) and are not shared between nodes.
-
-## What Can I Do With kachery?
-
-If you want to send and receive files, you (or your administrator, for shared setups)
-will need to install and run kachery-daemon on the machine that you intend to be the
-host of the node. See [full setup instructions for a kachery node](./kacheryhub-markdown/hostKacheryNode.md).
-You will also need to use kacheryhub to connect your new node to the channel you'd
-like to use to share data.
-
-Once this is done, [install kachery-client](./client-howto.md) and you'll be ready to start!
-
-More sophisticated setups are of course possible: the same tools can be used to build
-web applications that act like nodes or make use of the [kachery-daemon API](./daemon-api.md).
-The largest use of kachery is as a library to facilitate other applications, such as
-web applications; see our [section on building projects that make use of kachery](./building.md).

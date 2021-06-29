@@ -1,6 +1,6 @@
 # Local node storage
 
-Kachery [files](./content-uris.md) and [feeds](./feeds.md) are first stored locally and are uploaded to the [kachery network](./network.md) only when requested by another [node](./node.md) with the appropriate access permissions.
+kachery [files](./content-uris.md) and [feeds](./feeds.md) are first stored locally and are uploaded to the [kachery network](./network.md) only when requested by another [node](./node.md) with the appropriate access permissions.
 
 For example, when we run the following script,
 

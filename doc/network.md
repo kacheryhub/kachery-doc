@@ -1,6 +1,6 @@
 # kachery network
 
-![Kachery network](https://docs.google.com/drawings/d/e/2PACX-1vQUnokzwrFHdIO-LjloBjHGbOHE7uaLEh9frzx-WrJbn_z0lIScFhyNWCBYZfj6ofjNHRoJbzjJbFlS/pub?w=960&h=720)
+![kachery network](https://docs.google.com/drawings/d/e/2PACX-1vQUnokzwrFHdIO-LjloBjHGbOHE7uaLEh9frzx-WrJbn_z0lIScFhyNWCBYZfj6ofjNHRoJbzjJbFlS/pub?w=960&h=720)
 
 The kachery network is organized into nodes and channels, and each node may belong to one or more channels configured with particular roles.
 
@@ -37,5 +37,5 @@ the file to the cloud storage space.
 
 See also:
 
-* [Kachery security model](./security.md)
+* [kachery security model](./security.md)
 
