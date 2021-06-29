@@ -26,7 +26,7 @@ A node without "provide" permissions for a given information type
 see requests coming from other nodes.
 
 Each permission on a named kachery channel implies a certain set of
-access permissions to the pub-sub communication channels. See
+access permissions to the pub-sub communication bands. See
 [the documentation on node-node communications](./node.md#coordinating_communications)
 for details.
 
@@ -60,7 +60,7 @@ URL can make an HTTP PUT request to it in order to upload a file to the cloud.
 ## Channel owner stored credentials
 
 kacheryhub manages access to the various resources owned by the channel
-owner: specifically, the cloud storage cache and the Ably pub-sub channels.
+owner: specifically, the cloud storage cache and the Ably pub-sub bands.
 In order to provide nodes with access, kacheryhub needs to store
 these credentials and provide limited-access tokens upon
 appropriately validated request.

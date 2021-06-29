@@ -44,7 +44,7 @@ The node-to-node communication channels correspond to the six types of
 [channel permissions](./security.md#Permissions): each node can be granted
 permission on a channel to *request* or *provide* data of the three different types:
 *files*, *feeds*, and *tasks*. Thus, for each named channel on kacheryhub,
-there are six pub-sub channels:
+there are six [pub-sub](./pub-sub.md) bands:
 
 * Request File
 * Provide File
@@ -53,24 +53,24 @@ there are six pub-sub channels:
 * Request Task
 * Provide Task
 
-Each of these channels can have both a "publish" and a "subscribe" permission.
-Publish permission allows the node to write new messages to the pub-sub channel,
+Each of these bands can have both a "publish" and a "subscribe" permission.
+Publish permission allows the node to write new messages to the pub-sub band,
 while an active subscription causes the node to be notified whenever new
-messages are published to the pub-sub channel.
+messages are published to the pub-sub band.
 
 Granting a node permissions for a particular action on a named kachery
 channel automatically grants permissions on the corresponding pub-sub
-channel that will allow it to fulfill that role. These permissions
+band that will allow it to fulfill that role. These permissions
 have a complementary distribution: to request a type of information,
-a node needs to be able to publish to the request channel and be subscribed
-to updates from the provide channel; by contrast, to provide information,
-a node must be notified of new messages on the request channel, and able
-to publish updates to the "providing files" channel.
+a node needs to be able to publish to the request band and be subscribed
+to updates from the provide band; by contrast, to provide information,
+a node must be notified of new messages on the request band, and able
+to publish updates to the "providing files" band.
 
-The following table illustrates the pub-sub channel permissions corresponding
+The following table illustrates the pub-sub band permissions corresponding
 to the "Request File" and "Provide File" permissions:
 
-| Permission   | Request Files channel | Provide Files channel |
+| Permission   | Request Files band | Provide Files band |
 |--------------|-----------------------|-----------------------|
 | Request File | Publish allowed       | Subscribed            |
 | Provide File | Subscribed            | Publish allowed       |
@@ -78,10 +78,10 @@ to the "Request File" and "Provide File" permissions:
 Permissions to request or provide feeds or tasks are similar.
 
 When a node *requests* information, it publishes the request to the
-corresponding "Request" pub-sub channel. All nodes in the kachery channel with the corresponding
+corresponding "Request" pub-sub band. All nodes in the kachery channel with the corresponding
 *provide* permission for that information are then notified of the new
 request by their subscription. A node which can satisfy the request
-will publish a response to the "Provide" pub-sub channel; the requesting node
+will publish a response to the "Provide" pub-sub band; the requesting node
 sees this notification and knows that its request will be satisfied.
 The provider node continues to publish updates during the retrieval
 process, and will publish a "completion" notification after all data

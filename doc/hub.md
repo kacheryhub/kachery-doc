@@ -57,9 +57,9 @@ that share information. Any kacheryhub user can create a channel by providing
 a *unique name*, access credentials to a
 *cloud storage resource* that will serve as the channel's cloud storage cache, and
 a *publish-subscribe API key* (i.e. [Ably](https://ably.com/pub-sub-messaging))
-to authorize nodes to communicate on the channel's pub-sub bands. These credentials
+to authorize nodes to communicate on the channel's [pub-sub](./pub-sub.md) bands. These credentials
 will be stored on the kacheryhub system and used to authorize access from
-other nodes to the pub-sub communications channels and the cloud storage cache.
+other nodes to the pub-sub communication bands and the cloud storage cache.
 These credentials must be stored in a readable format in order to be used in
 this fashion; however, they are revocable in the unlikely event of compromise.
 
