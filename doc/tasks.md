@@ -61,7 +61,7 @@ function to be called. That task returns a hither Job, which is an asynchronous
 deferred processing token that may be executed in a container and/or on a remote
 resource or cluster node.
 While the Job is processing, the task backend started by `backend.py` will
-publish status updates on the `PROVIDE-TASK` pub-sub channel. Once
+publish status updates on the `PROVIDE-TASK` [pub-sub](./pub-sub.md) band. Once
 processing is complete, the return value of the Job will be placed in the kachery cache,
 so nodes subsequently requesting `echo_hither_task.1` with the same `{'b': 'hello world'}`
 parameter can retrieve the reslt from the cache without invoking the task system or
@@ -97,8 +97,8 @@ interactions take place at the level of node-to-node communication.
 
 Each node with active "Provide Task" permissions on a channel must be connected
 to a task backend in order to run tasks successfully. The "Provide Task" permission
-grants "publish" (write) access to the `PROVIDE-TASK` pub-sub channel, and "subscribe"
-(read) access to the `REQUEST-TASK` channel (see the reference on
+grants "publish" (write) access to the `PROVIDE-TASK` pub-sub band, and "subscribe"
+(read) access to the `REQUEST-TASK` band (see the reference on
 [node-to-node communications](./node.md#communications)).
 
 When a node ("**Requester**") wishes to run a task, the following occurs:
@@ -110,18 +110,18 @@ found, **Requester** uses this cached value, and no further action is needed. (T
 will function even if there are no active nodes on the channel with "Provide Task" permissions.)
 * If the value is not cached:
   * **Requester** publishes a request with the task ID and parameters on the `REQUEST-TASK`
-  pub-sub channel for the kachery channel.
+  pub-sub band for the kachery channel.
   * Every node ("**Provider**") with active "Provide Task" permissions on the kachery channel
-  is subscribed to the `REQUEST-TASK` pub-sub channel, and thus notified of the request.
+  is subscribed to the `REQUEST-TASK` pub-sub band, and thus notified of the request.
   * Each **Provider** checks whether its task backend provides the requested task.
   * **Provider** nodes that don't recognize the task do nothing.
   [ED: SHOULD THEY PUBLISH SOMETHING EXPLICIT TO `PROVIDE-TASK`?]
   * Each **Provider** node with a matching registered task ID instructs its task backend
   to call the corresponding python function (and provides it the parameter list
-  from **Requester**). Each **Provider** publishes its status on the `PROVIDE-TASK` channel,
+  from **Requester**). Each **Provider** publishes its status on the `PROVIDE-TASK` band,
   so that **Requester** can fetch the results from the cloud cache once they are available.
   * For tasks implemented as hither functions, the **Provider** will publish Job status
-  updates to the `PROVIDE-TASK` pub-sub channel, as well as the final results.
+  updates to the `PROVIDE-TASK` pub-sub band, as well as the final results.
 
 The exact contents of any particular task is up to the task implementer. However,
 executing a task is a blocking call, so for anything
@@ -133,7 +133,7 @@ This description applies to "pure-calculation"-type tasks. The other two task
 types are handled slightly differently:
 
 * In the case of "query"-type tasks, **Requester** will make the request on the
-`REQUEST-TASK` channel first, and only use cached results if new ones cannot be obtained.
+`REQUEST-TASK` band first, and only use cached results if new ones cannot be obtained.
 * In the case of "action"-type tasks, the cache is skipped entirely, as these tasks are
 intended to modify external state. [QUERY: DO WE NEED A "RUN-ONCE-ONLY" FEATURE?]
 
@@ -156,8 +156,8 @@ inputs that need to be sanitized before being used on secured systems.
 
 The "Request Task" and "Provide Task" permissions govern task access on a channel. Nodes can
 request task results if granted "Request Task" access, which will also allow *publish* rights
-on the channel's `REQUEST-TASK` pub-sub channel and *subscribe* rights on the channel's
-`PROVIDE-TASK` pub-sub channel. Nodes can provide task results if granted "Provide Task" access,
+on the channel's `REQUEST-TASK` pub-sub band and *subscribe* rights on the channel's
+`PROVIDE-TASK` pub-sub band. Nodes can provide task results if granted "Provide Task" access,
 which provides complementary pub-sub rights (*subscribe* on `REQUEST-TASK` and *publish* on
 `PROVIDE-TASK`).
 
@@ -173,7 +173,7 @@ request task execution is allowed to request any task registered with the backen
 
 Results of "pure-calculation" or "query" tasks will be written to the cloud storage cache.
 "Action"-type tasks only return success or failure, which will be communicated over the
-pub-sub channel.
+pub-sub band.
 
 In the event that the python function backing a task request returns a hither Job, the
 task backend will automatically write the Job result to the cloud cache on Job completion.

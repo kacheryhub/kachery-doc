@@ -23,9 +23,9 @@ over which data is transferred between nodes (nodes do not interact directly wit
 
 * **[Publish/subscribe services](./pub-sub.md)** are used for low-latency communication between nodes. Much the same as nodes use a cloud storage
 bucket to transfer files, they also communicate requests and status messages
-through shared publish/subscribe (pub-sub) message channels. This is presently implemented
+through shared publish/subscribe (pub-sub) message bands. This is presently implemented
 through [Ably](https://ably.com/pub-sub-messaging). A node requesting
-a file will send a message to the corresponding pub-sub channel,
+a file will send a message to the corresponding pub-sub band,
 and nodes with file-uploading permissions listen for requests and respond by uploading
 the file to the cloud storage space.
 
