@@ -30,19 +30,66 @@ access permissions to the pub-sub communication bands. See
 [the documentation on node-node communications](./node.md#coordinating_communications)
 for details.
 
-Permissions cannot be forced on a node unilaterally. The person owning
-or running a node must specify what permissions the node requests on
+Permissions cannot be forced on a node unilaterally. The node's owner
+must specify what permissions the node requests on
 each channel to which it is joined. Ultimately, the actual permissions
 will be the intersection of the permission lists: nodes have only
 those permissions which have been both requested by the node owner
 and granted by the channel owner.
 
-Note that permissions are granted to a combination of the *node*
+Permissions are granted to a combination of the *node*
 (identified by a node key) and its *owner* (identified by the federated
-authentication acccount provider, e.g. a Google account). Thus, even in a
-situation where multiple users share logins to the same machine and run
-a node with the same key, permissions are specific to the user named by
-the `--owner` parameter with which the kachery daemon was invoked.
+authentication acccount provider, e.g. a Google account). Both parts
+are required in order to run a node. This mitigates several possible
+attack vectors, demonstrated by a malicious user *Mal* and a permitted
+user *Justine*. (Note that the `--label` parameter is a cosmetic identifier
+and has no functional significance.)
+
+* *False flag node*: Mal might try to create a new node
+in Justine's name:
+  > `$ kachery-daemon-start --label justines_node --owner justine@gmail.com`
+  
+  However, each instance of the node has its own identifier,
+  so this command would create a new node different from any
+  Justine already had. The new node would then
+  need to be joined to the target channel; but it would not be possible to
+  configure the new node without logging in to kacheryhub using Justine's
+  actual Google credentials.
+
+* *Node stealing*: Suppose Mal has shell access on the machine where Justine's
+existing, configured node is run. Starting the node with Mal as owner:
+  > `$ kachery-daemon-start --label justines_node --owner mal@gmail.com`
+
+  will not result in compromise, because the node with Mal as owner has a
+  separate permission configuration from the node with Justine as owner.
+
+* *Unsupervised startup*: In fact, even if Mal has shell access and attempts
+to start the node by passing Justine's Google credentials, this still will not
+result in compromise: Mal cannot start Justine's actual node
+without using the node's private key, which is kept secure in Justine's key store.
+
+A few remaining vulnerabilities may occur in the event of carelessness or
+misconfiguration:
+
+* Channel owners with potentially sensitive information should be cautious
+about granting permissions. While Mal cannot start a fake node using Justine's
+actual Google credentials, it would still be possible for Mal to create a
+similar-sounding account--e.g. `just1ne@gmail.com`--and create a node using
+this account. Channel administrators hosting sensitive data
+should be aware of this kind of impersonation and not grant new node permissions
+without first making separate contact with the node owner to confirm.
+In addition to exercising caution, it may be advisable to establish
+a policy of granting access only to nodes owned by institutionally managed accounts,
+since these are harder to create maliciously.
+
+* [Channel permissions do not apply to the local file store](./storage.md#Local-data-storage-access).
+If Mal has access to the filesystem where Justine's `$KACHERY_STORAGE_DIR` resides,
+it may be possible to navigate to files of interest without going through
+the kachery system. To mitigate this possibility, it is advisable to use a
+[service account](https://unix.stackexchange.com/questions/314725/what-is-the-difference-between-user-and-service-account)
+to run the kachery daemon when running on a shared system, and to ensure
+that the `$KACHERY_STORAGE_DIR` directory is owned by & readable only to
+that service account.
 
 ## Uploads
 
