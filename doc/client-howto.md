@@ -171,7 +171,7 @@ host on which to look for the node. If not set, the daemon
 is assumed to exist on localhost (i.e. the node is assumed
 to be running on the same machine as the client).
 * `KACHERY_TEMP_DIR`: If set, temporary files will be stored in
-this directory. Otherwise, a default location will be used.
+this directory. Otherwise, a default location (`/tmp/kachery-tmp` or `$KACHERY_OFFLINE_STORAGE_DIR/kachery-tmp`) will be used.
 * `KACHERY_KEEP_TEMP_FILES`: When this variable is set to 1,
 the kachery client will not attempt to clear out temporary files.
 This can be useful for developers when debugging.
