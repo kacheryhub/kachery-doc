@@ -116,13 +116,13 @@ In order to create upload URLs, kacheryhub needs to use the
 *channel owner's cloud storage provider access credentials*. These should
 have been registered at the time the channel was created.
 
-kacheryhub also requires the Ably API key to provide pub-sub channel
+kacheryhub also requires the Ably API key to provide pub-sub band
 access tokens to nodes. To interact with other nodes, a node requests
 the appropriate subscribe and publish permissions from kacheryhub.
 The kacheryhub server acts as an authentication/authorization server;
 it verifies the identify of the node-owner pair (using signature verification)
 and, if the node checks out, it uses the Ably API key of the channel owner
-to provide the node with temporary access tokens to the pub-sub channels.
+to provide the node with temporary access tokens to the pub-sub bands.
 (These expire after around 30 minutes and must be renewed at that time. This is managed internally by the kachery libraries.)
 
 ## Feeds
