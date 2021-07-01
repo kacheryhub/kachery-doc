@@ -43,11 +43,15 @@ local kachery store--the storage location is determined by the SHA1 fingerprint
 So, if a node has enough information to make a request, it can immediately
 compute the URI where the needed data would be stored in the cloud storage cache.
 
-[TODO: NEED AN EXAMPLE OF A URI]
+Specifically, as per
+[Google's documentation](https://cloud.google.com/storage/docs/request-endpoints),
+cloud storage buckets are accessed through URLs of the form:
 
-[QUERY: IS THERE ANY ACCESS RESTRICTION FOR DONWLOAD, OR COULD A LEAKED URI LEAK FILES?]
+> `https://storage.googleapis.com/storage/v1/<bucket-name>/<object-name>`
 
-[QUERY: I'm assuming everything is findable from the SHA1, but what about the manifest?]
+The node obtains the bucket name when it joins the channel, and the object name
+follows the same structure as is used for
+[records in local storage](https://github.com/kacheryhub/kachery-doc/blob/main/doc/local-node-storage.md).
 
 So, the first step for any node that wants to download data from a channel is
 to check the cloud storage and see if the data is available. If it is, it is
@@ -56,6 +60,13 @@ downloaded directly.
 If the data is not available, the requesting node will ask for it through the
 request process linked above. Once the data has been uploaded by a provider,
 the provider will notify the requester of the URI where the uploaded data can be found.
+
+It is important to stress that the storage buckets used in kachery are configured
+so that anyone with an appropriate URL can download the corresponding record, even
+through a web browser (without using a node). The channel permission
+mechanism does not prevent this. Because the URL can be determined
+directly from the channel bucket name and the SHA1 fingerprint, it is essential
+not to share SHA1 URIs outside of their intended recipients.
 
 ### Writing to cloud storage
 
