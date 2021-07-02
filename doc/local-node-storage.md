@@ -28,4 +28,3 @@ $KACHERY_STORAGE_DIR/feeds.db
 ```
 
 and will only be uploaded to the cloud if another authorized node requests the feed on a channel, and we are configured to provide feeds on that channel.
-
