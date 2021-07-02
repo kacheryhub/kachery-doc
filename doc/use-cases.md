@@ -14,5 +14,5 @@ See [sharing data between workstations using Python](./sharing-data.md)
 
 ## Host a web application
 
-The largest use of kachery is as a library to facilitate other applications, such as
+Kachery can be used to build
 web applications; see our [section on building projects that make use of kachery](./building.md).
