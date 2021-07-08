@@ -93,6 +93,8 @@ Other more advanced options are available, such as specifying listen ports (see 
 
 ## Advanced configuration
 
+[Limiting the size of the storage cache](https://github.com/kacheryhub/kachery-doc/blob/main/doc/cache-size-limit.md)
+
 Environment variables for the daemon
 
 * `KACHERY_STORAGE_DIR` **(optional)** - Refers to an existing directory on your local computer. This is where kachery stores all of your cached files. If not set, files will be stored in the default location: `$HOME/kachery-storage`.
