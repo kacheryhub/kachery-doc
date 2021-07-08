@@ -2,7 +2,7 @@
 
 Content URIs are at the heart of the kachery system. Files in kachery are never referred to by local file path (e.g., `/path/to/file.dat`) or by web URL (e.g., `http://example.com/file.dat`), but are instead referenced by content URIs of the form
 
-```
+```bash
 sha1://943a702d06f34599aee1f8da8ef9f7296031d699
 ```
 
@@ -33,7 +33,7 @@ print(uri)
 
 This small string is not very interesting, but the advantages of the content URI scheme start to become evident when we consider larger files. For example, the following is a reference to the plain-text e-book version of *Treasure Island* from Project Gutenberg:
 
-```
+```bash
 sha1://ab42927dabd81c0d7993e369a6a2a1551305aaac/treasure-island.txt
 ```
 
