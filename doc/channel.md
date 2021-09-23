@@ -47,4 +47,4 @@ Channels, along with their membership and permissions, are managed via the
 
 ## Creating and managing a channel
 
-[How to create a kachery channel](./kacheryhub-markdown/createKacheryChannel.md)
+[How to create a kachery channel](./createKacheryChannel.md)

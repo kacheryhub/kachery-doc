@@ -6,7 +6,7 @@ request data or operations from other nodes on the channel or contribute its own
 The basic example is a running instance of the `kachery-daemon` package.
 
 *For practical information on running a kachery node, including a step-by-step tutorial,
-see the [instructions on running a kachery node](./kacheryhub-markdown/hostKacheryNode.md).*
+see the [instructions on running a kachery node](./hostKacheryNode.md).*
 
 ## Communications
 

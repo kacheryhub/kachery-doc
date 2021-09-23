@@ -3,7 +3,7 @@
 ## Share files and Python data objects between workstations
 
 If you want to send and receive files via kachery, you (or your administrator, for shared setups)
-will need to install and run [kachery-daemon](./kacheryhub-markdown/hostKacheryNode.md) on the machine that you intend to be the
+will need to install and run [kachery-daemon](./hostKacheryNode.md) on the machine that you intend to be the
 host of the node.
 You will also need to use [kacheryhub.org](https://kacheryhub.org) to connect your new node to the channel you'd
 like to use to share data.
