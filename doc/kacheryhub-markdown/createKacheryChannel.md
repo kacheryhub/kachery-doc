@@ -8,7 +8,7 @@ Each kachery channel needs to be associated with a Bitwooder resource. You can o
 
 ## Adding the channel on kacheryhub
 
-Once you have a Bitwooder resource for your channel, you can add and configure the channel on kacheryhub. Click the button to `Create a new channel` and then paste in the Bitwooder Resource Key. Next, choose a name for your channel; you should choose a unique name without spaces. Finally, specify which nodes you would like to authorize on the channel. Be sure to select your own node as well as the Figurl node (if desired).
+Once you have a Bitwooder resource, you can add and configure a channel on kacheryhub. Click the button to `Create a new channel` and then paste in the Bitwooder Resource Key. Next, choose a name for your channel; you should choose a unique name without spaces. Finally, specify which nodes you would like to authorize on the channel. Be sure to select your own node as well as the Figurl node (if desired).
 
 ## Google Storage Bucket creation and configuration
 
