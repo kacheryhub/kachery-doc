@@ -1,6 +1,6 @@
-# How to create a kachery channel
+# Creating a kachery channel
 
-A kachery channel allows authorized kachery nodes to communicate with one another, share data, and execute tasks. To create a new channel, you must first create or claiming the necessary cloud resources on [bitwooder.net](https://bitwooder.net). After that you can configure a new kacheryhub channel to use those resources.
+A kachery channel allows authorized kachery nodes to communicate with one another, share data, and execute tasks. To create a new channel, you must first create or claim the necessary cloud resources on [bitwooder.net](https://bitwooder.net). After that, you can configure a new kacheryhub channel to use those resources.
 
 ## Creating or claiming a Bitwooder channel resource
 
