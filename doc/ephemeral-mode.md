@@ -26,7 +26,7 @@ d = kec.load_npy(uri)
 e = kec.load_pkl(uri)
 ```
 
-In order to be loaded in ephemeral mode, files must already be stored in the channel's cloud bucket. To get a file into the cloud bucket, you can either load the file in normal mode from a remote node (requires a kachery daemon), or you can explicitly upload a file to a channel using:
+In order to be loaded in ephemeral mode, files must already be stored in the channel's cloud bucket. To get a file into the cloud bucket, you can either load the file in normal mode from a remote node, or you can explicitly upload a file to a channel using:
 
 ```bash
 kachery-store [file] --upload-to-channel CHANNEL
