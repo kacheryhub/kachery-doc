@@ -80,7 +80,7 @@ windows.
 
 Log in to kacheryhub with the same google account you passed for the
 `--owner` flag when starting
-the daemon, then click the `add kachery node` button and follow the
+the daemon, then click the `Register a new node` button and follow the
 instructions on screen to register your node.
 
 You can now click on your node ID to join channels. Indicate the roles
