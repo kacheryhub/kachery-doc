@@ -2,7 +2,7 @@
 
 It is also possible to load kachery files directly from a channel without creating a node or running a daemon.
 
-> :warning: This applies only to files that are already stored in the channel's cloud bucket.
+> :warning: This applies only to files that are already stored in the channel's cloud bucket. See below for instructions on uploading a file to a channel bucket.
 
 From the command line:
 
