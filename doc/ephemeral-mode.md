@@ -7,6 +7,7 @@ It is also possible to load kachery files directly from a channel without creati
 From the command line:
 
 ```bash
+# These commands do not require a running daemon
 kachery-load <URI> --ephemeral-channel <CHANNEL>
 kachery-cat <URI> --ephemeral-channel <CHANNEL>
 ```
@@ -15,8 +16,9 @@ From Python:
 
 ```python
 import kachery_client as kc
-kec = kc.EphemeralClient(channel='CHANNEL')
+kec = kc.EphemeralClient(channel='CHANNEL') # fill in the desired channel
 
+# These commands do not require a running daemon
 a = kec.load_file(uri)
 b = kec.load_text(uri)
 c = kec.load_json(uri)
