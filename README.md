@@ -9,6 +9,7 @@ To learn more, select one of the following topics:
 * kachery [files](./doc/content-uris.md), [feeds](./doc/feeds.md), and [tasks](./doc/tasks.md)
 * [Getting started: hosting a kachery node](./doc/hostKacheryNode.md)
 * [Sharing data between nodes](./doc/sharing-data.md)
+* [Loading data in ephemeral mode](./doc/ephemeral-mode.md)
 * [About kachery channels](./doc/channel.md)
 * [Local node storage](./doc/local-node-storage.md)
 * [Security model](./doc/security.md)
