@@ -1,3 +1,5 @@
+> :warning: Please use [kachery-cloud](https://github.com/scratchrealm/kachery-cloud) instead.
+
 # kachery
 
 *kachery* is a mediated peer-to-peer information-transfer network for sharing scientific data files, live feeds, and calculation results between remote workstations and between lab computers and browser-based user interfaces in the cloud. The network is organized into nodes and channels, with channels mediating communication and managing access permissions between the nodes. Anyone can create and host a node by running a kachery daemon on their computer, and nodes and channels may be configured at [kacheryhub.org](https://kacheryhub.org).
